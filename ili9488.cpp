@@ -90,17 +90,17 @@ void InitILI9488()
 // I could not find a difference is using the three different
 // settings for 0xB4. It is left at 0x02 since that is what
 // the original test value was set to.
-#ifdef DISPLAY_INVERT_COLORS
+//#ifdef DISPLAY_INVERT_COLORS
       // 0xB4 Display Inversion Control.
       SPI_TRANSFER(0xB4, 0x02);
       // 0x21 Display Inversion ON.
       SPI_TRANSFER(0x21);
-#else
-      // 0xB4 Display Inversion Control.
-      SPI_TRANSFER(0xB4, 0x02);
-      // 0x20 Display Inversion OFF.
-      SPI_TRANSFER(0x20);
-#endif
+// #else
+//       // 0xB4 Display Inversion Control.
+//       SPI_TRANSFER(0xB4, 0x02);
+//       // 0x20 Display Inversion OFF.
+//       SPI_TRANSFER(0x20);
+// #endif
 
       // 0xB6 Display Function Control.
       SPI_TRANSFER(0xB6, 0x02, 0x02);
