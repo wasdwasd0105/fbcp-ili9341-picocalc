@@ -1,3 +1,26 @@
+# For ili9488 on Picocalc 
+### Please Use Legacy 32-bit Bullseye Raspberry Pi OS!!!
+
+## install & run
+
+1. make sure change the boot config 
+
+```bash
+cd ./fbcp-ili9341-picocalc
+
+mkdir build
+
+cd build
+
+cmake -DUSE_GPU=ON -DSPI_BUS_CLOCK_DIVISOR=12  -DGPIO_TFT_DATA_CONTROL=24(your D/C pin) 
+-DGPIO_TFT_RESET_PIN=25(your Reset pin)  -DILI9488=ON -DUSE_DMA_TRANSFERS=OFF -DSTATISTICS=0 ..
+
+make -j4
+
+sudo ./fbcp-ili9341
+
+```
+
 # Feb 2024 Update
 
 The era of fbcp-ili9341 has come to an end. Fbcp-ili9341 was built on top of the Raspberry Pi's [VideoCore DispmanX API](https://elinux.org/Raspberry_Pi_VideoCore_APIs#vc_dispmanx_.2A).
