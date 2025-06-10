@@ -67,7 +67,10 @@ void InitILI9488()
     // 0x80 180 deg (W = 320, H = 480, FPC connector on top)
     // 0xE0 270 deg (W = 480, H = 320, FPC connector on left)
       // 0x36 Memory Access Control - sets display rotation.
-      SPI_TRANSFER(0x36, madctl);
+
+      //SPI_TRANSFER(0x36, madctl);
+      SPI_TRANSFER(0x36, 0x68);
+
 
       // 0x3A Interface Pixel Format (bit depth color space)
       SPI_TRANSFER(0x3A, 0x66);
